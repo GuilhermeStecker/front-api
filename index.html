@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Status da API</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Arial, sans-serif;
+
+      background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e1b4b,
+        #312e81
+      );
+
+      color: #fff;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 600px;
+
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 20px;
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 25px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background: #4f46e5;
+
+      font-size: 20px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 14px;
+
+      border-radius: 20px;
+
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    .json-box {
+      background: #020617;
+
+      border: 1px solid #334155;
+
+      border-radius: 14px;
+
+      padding: 22px;
+
+      overflow-x: auto;
+    }
+
+    .json {
+      font-family: "Courier New", monospace;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .bracket {
+      color: #94a3b8;
+    }
+
+    .key {
+      color: #60a5fa;
+    }
+
+    .string {
+      color: #86efac;
+    }
+
+    .footer {
+      margin-top: 20px;
+
+      color: #94a3b8;
+
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Checkbox estilizado */
+
+    .switch {
+      position: relative;
+      width: 48px;
+      height: 26px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+
+      cursor: pointer;
+
+      background: #475569;
+
+      border-radius: 30px;
+
+      transition: 0.3s;
+    }
+
+    .slider::before {
+      content: "";
+
+      position: absolute;
+
+      width: 20px;
+      height: 20px;
+
+      left: 3px;
+      top: 3px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+
+    .switch input:checked + .slider {
+      background: #4f46e5;
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(22px);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 19px;
+      }
+
+      .status {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="header">
+
+      <div class="title">
+        <div class="icon">⚡</div>
+        Status da API
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      API Online
+    </div>
+
+    <br>
+
+    <div class="json-box">
+
+      <div class="json">
+        <span class="bracket">{</span><br>
+
+        &nbsp;&nbsp;
+        <span class="key">"date"</span>:
+        <span class="string">"27/08/2026, 21:41:00"</span>,
+
+        <br>
+
+        &nbsp;&nbsp;
+        <span class="key">"status"</span>:
+        <span class="string">"API no Render funcionando!"</span>
+
+        <br>
+
+        <span class="bracket">}</span>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Sistema conectado e funcionando normalmente
+    </div>
+
+  </div>
+
+</body>
+</html>
